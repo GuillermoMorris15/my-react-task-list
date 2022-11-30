@@ -1,11 +1,15 @@
 import React from "react";
 import  {AiFillEdit}  from "react-icons/ai";
-import './BtnEditar.css';
+import useList from "../../Hooks/useList";
+import './BtnEditar.css'
 
-function BtnEditar() {
-return(
-    <AiFillEdit className="btndelete"/>
-)
+function BtnEditar(props) {
+    const {editar } = useList(props.tarea, props.item)
+    
+    return(
+        <AiFillEdit onClick={editar} className="btneditar"/>
+    )
+
 }
 
-export default BtnEditar
+export default BtnEditar 
