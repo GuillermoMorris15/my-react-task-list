@@ -1,65 +1,34 @@
 import './listaTareas.css';
-import Tarea from '../Tarea/tarea';
-import { useState, useEffect } from 'react';
-
+import Tarea from '../Tarea/Tarea';
+import { useState } from 'react';
+import { AiFillCaretDown } from "react-icons/ai";
+import useList from '../Hooks/useList';
+import useMostrar from '../Hooks/useMostrar';
 
 
 function ListaTareas () {
-   let Data = [];
-   let ultimo = 0;
-    
-    function Mostrar () {
-        
-        for ( const  i in localStorage) {
-            if (!isNaN(i)) {
-                ultimo = Number(i)
-                Data.push(localStorage.getItem(i))
-            }
-        }
-        /*  localStorage.map((x)=>{
-            Data.push(x)
-            Data.push(localStorage.getItem(i))
-            
-        }) */
-        /* for (let i = 0; i < localStorage.length ; i++) {
-            Data.push(localStorage.getItem());
-        }  */
-        console.log(Data)
-        
-    }
 
-
-        Mostrar();
-    
+    const { ultimo , Data } = useMostrar();
+    const [mostardess, setMostarDes] = useState(false);
 
     const [texto, setTexto] = useState("");
-    const [contador, setContador ] = useState(Data.length);
+    const [dess, setDess] = useState("");
 
+    const{ guardar }= useList(texto, ultimo ,dess);
+    
     const handelImputChange = ({target})=>{
         setTexto(target.value)
     }
-
-    useEffect(()=>{
-        console.log(contador)
-    },[contador])
-
-
-    function guardar (e) {
-        if (texto !== "") {
-            localStorage.setItem(contador,texto)
-            alert("Nueva Tarea agregada");
-            setTexto("")
-            setContador(ultimo + 1);
-            Mostrar()
-            
-        }else{
-            alert("Añada una descripcion")
-        }
+    
+    const passinputChange = ({target})=>{
+        setDess(target.value)
     }
 
     function BuscarId(x) {
+        let obj;  
         for (const key in localStorage ) {
-            if(localStorage.getItem(key) === x){
+            obj = JSON.parse(localStorage.getItem(key));
+            if(obj.tarea === x){
                 return key
 
             }
@@ -72,7 +41,12 @@ function ListaTareas () {
             <center>
             <form onSubmit={guardar}>
               <input className='inputTarea' value={texto} type='text' onChange={handelImputChange} placeholder="Add your new todo"/>
-              <button className='buttonTarea' type='submit'> + </button>
+              <button  className='buttonTarea' type='submit'> + </button>
+              <br/>
+              {mostardess? <input className='inputTarea' value={dess} type='text' onChange={passinputChange} placeholder="Add your descrition"/>: <></>}
+              
+              <AiFillCaretDown onClick={()=>setMostarDes(!mostardess)}/>
+              <br/>
             </form>
             <br/>
             <div id="tareas" className='tareas'>
@@ -80,15 +54,13 @@ function ListaTareas () {
                     Data.map( (x , index )  =>
                     (
                        x ?(
-                       <Tarea key={index} item={BuscarId(x)} tarea={x} />
+                       <Tarea key={index} item={BuscarId(x.tarea)} tarea={x.tarea} dess={x.descripcion} />
                        ):( <></> ) 
-                    
                     )
                   )
                 ):(
                     <p>No hay tareas</p>
                 )
-                  
                 }
             </div>
             </center>
