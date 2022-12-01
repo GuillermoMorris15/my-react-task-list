@@ -9,4 +9,4 @@
 1.guarda edita muestra y elimina tareas de forma segura
 2.las tareas cuentan con un estado el cual puedes cambiar segun te parezca.
 3.una lista facil de usar 
-4.y cumplir cada una de las tareas. 
+4.y cumplir las tareas que no esten tachadas 
