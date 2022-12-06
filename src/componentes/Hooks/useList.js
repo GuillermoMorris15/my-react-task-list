@@ -1,4 +1,4 @@
-//import useMostrar from "./useMostrar";
+
 
 function useList (texto, ultimo) {
 
