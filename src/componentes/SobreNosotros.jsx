@@ -7,20 +7,19 @@ import {
 function SobreNosotros () {
     return(
         <div>
-            <Menu/>
+           <Menu/>
             <h2>Sobre Nosotros</h2>
             <strong>Descripcion</strong>
-            <p>listas de tareas es una herramienta para ir apuntando cosas que quieres, debes o podrías hacer.</p>
+            <p>listas de tareas es una forma facil y divertida de escribir y realixar todas tus tareas.</p>
             <strong>Funciones</strong>
-            <OrderedList>
-            <ListItem>Guarda edita muestra y elimina tareas de forma segura.</ListItem>
-            <ListItem>las tareas cuentan con un estado el cual puedes cambiar segun te paresca.</ListItem>
-            <ListItem>Te indica en tiempo real el numero de tareas que tienes pendientes.</ListItem>
-            <ListItem>Es un siste ma practico y de uso facil.</ListItem>
-            </OrderedList>
-            <strong>Este sistema fue desarrollado con JavaScript</strong>
-            <strong>Usando tecnologias como React</strong>
-
+            <ol>
+                <li>Guarda edita muestra y elimina tareas.</li>
+                <li>las tareas pueden cambiar y variar segun tu gusto.</li>
+                <li>puedes saber la cantidad de tareas que tienes pendiente.</li>
+                <li>Es muy facil de usar.</li>
+            </ol>
+            <strong>Desarrollado en JavaScrip</strong> <br/>
+            <strong> Tambien uso de React</strong>
 
         </div>
     )
