@@ -15,4 +15,4 @@
 
 1.colocarle diferentes tipos de estilo
 2.que temga mas funcionalidades al agregar tareas
-3.poder hacer que el usuario vea esta lista de tarea cada vez mas facil y divertida de usar.
+3.poder hacer que el usuario vea esta lista de tarea cada vez mas facil y divertida de usar..
