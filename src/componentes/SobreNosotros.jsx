@@ -1,8 +1,8 @@
 import Menu from "./menu/Menu"
-import {
-    ListItem,
-    OrderedList
-  } from '@chakra-ui/react'
+// import {
+//     ListItem,
+//     OrderedList
+//   } from '@chakra-ui/react'
 
 function SobreNosotros () {
     return(
