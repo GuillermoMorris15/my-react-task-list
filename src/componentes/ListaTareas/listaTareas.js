@@ -6,9 +6,8 @@ import useList from '../Hooks/useList';
 import useMostrar from '../Hooks/useMostrar';
 
 
-
 function ListaTareas () {
-    
+
     const { ultimo , Data } = useMostrar();
     const [mostardess, setMostarDes] = useState(false);
 
@@ -28,11 +27,14 @@ function ListaTareas () {
     function BuscarId(x) {
         let obj;  
         for (const key in localStorage ) {
-            obj = JSON.parse(localStorage.getItem(key));
-            if(obj.tarea === x){
-                return key
+            if (!isNaN(key) && localStorage[key] !== "light") {
+                obj = JSON.parse(localStorage.getItem(key));
+                if(obj.tarea === x){
+                    return key
 
+                }
             }
+            
         }
     }
  
@@ -63,7 +65,6 @@ function ListaTareas () {
                     <p>No hay tareas</p>
                 )
                 }
-
             </div>
             </center>
         </div>
