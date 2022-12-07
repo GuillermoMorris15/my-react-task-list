@@ -2,6 +2,7 @@ import './tareas.css';
 import BtnEditar from './BtnEditar/BtnEditar';
 import { AiFillCaretDown } from "react-icons/ai";
 import BtnEliminar from './BtnEliminar/BtnEliminar';
+
 import { useState } from 'react';
 
 
@@ -9,6 +10,7 @@ function Tarea (props) {
     const [mostarDess , setMostarDes] = useState(false)
     const [actualChecked, setChecked] = useState(false);
     const [actualEstado, setEstado ] = useState("pendiente");
+    
 
     const cambio = (e)=>{
         setChecked(e.target.checked)

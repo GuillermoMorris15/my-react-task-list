@@ -5,6 +5,7 @@ import Menu from "./menu/Menu"
 //   } from '@chakra-ui/react'
 
 function SobreNosotros () {
+
     return(
         <div>
            <Menu/>
@@ -18,10 +19,11 @@ function SobreNosotros () {
                 <li>puedes saber la cantidad de tareas que tienes pendiente.</li>
                 <li>Es muy facil de usar.</li>
             </ol>
-            <strong>Desarrollado en JavaScrip</strong> <br/>
-            <strong> Tambien uso de React</strong>
+            
+
 
         </div>
+        
     )
 }
 

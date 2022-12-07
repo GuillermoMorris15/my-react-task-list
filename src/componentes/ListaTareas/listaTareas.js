@@ -6,8 +6,9 @@ import useList from '../Hooks/useList';
 import useMostrar from '../Hooks/useMostrar';
 
 
-function ListaTareas () {
 
+function ListaTareas () {
+    
     const { ultimo , Data } = useMostrar();
     const [mostardess, setMostarDes] = useState(false);
 
@@ -62,6 +63,7 @@ function ListaTareas () {
                     <p>No hay tareas</p>
                 )
                 }
+
             </div>
             </center>
         </div>
