@@ -15,7 +15,7 @@ function Tarea (props) {
         if (actualChecked) {
             setEstado("pendiente");
         }else{
-            setEstado("realizado");
+            setEstado("realizado.");
         }
     }     
 
