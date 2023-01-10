@@ -1,5 +1,5 @@
 import './listaTareas.css';
-import Tarea from '../Tarea/Tarea';
+import Tarea from '../Tarea/tarea';
 import { useState } from 'react';
 import { AiFillCaretDown } from "react-icons/ai";
 import useList from '../Hooks/useList';
